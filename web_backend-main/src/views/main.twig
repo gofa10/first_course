@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<div class="control-container">
+  <div class="control-section">
+    <h3>Формы</h3>
+    <div class="button-group">
+      <a href="/clients/add"><button>Добавить клиента</button></a>
+      <a href="/trainers/add"><button>Добавить тренера</button></a>
+      <a href="/training_sessions/add"><button>Добавить тренировку</button></a>
+    </div>
+  </div>
+  <div class="control-section">
+    <h3>Таблицы</h3>
+    <div class="button-group">
+      <a href="/clients"><button>Клиенты</button></a>
+      <a href="/trainers"><button>Тренеры</button></a>
+      <a href="/training_sessions"><button>Тренировки</button></a>
+    </div>
+  </div>
+</div>
+{% endblock %}

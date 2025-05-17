@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+{% block title %}Добавление тренировки{% endblock %}
+{% block content %}
+<form id="form">
+  <h2>Добавление тренировки</h2>
+  <div class="form-body">
+  <div class="input-container">
+      <label for="name-input">Название<span>*</span></label>
+      <input id="name-input" name="name"></input>
+    </div>
+    <div class="input-container">
+      <label for="datetime-input">Дата и время<span>*</span></label>
+      <input type="datetime-local" id="datetime-input" name="datetime">
+    </div>
+    <div class="input-container">
+      <label for="duration-input">Длительность, ч.<span>*</span></label>
+      <input type="text" id="duration-input" name="duration">
+    </div>
+    <div class="input-container">
+      <label for="description-input">Описание</label>
+      <textarea id="description-input" name="description"></textarea>
+    </div>
+    <div class="input-container">
+      <label for="file-input" class="file-upload">Загрузка из CSV-файла</label>
+      <input type="file" id="file-input" name="file" accept=".csv">
+    </div>
+  </div>
+  <button type="submit" class="add-btn">Добавить</button>
+</form>
+{% endblock %}
+{% block script %}
+<script type="module" src="/js/training_session_form.js"></script>
+{% endblock %}

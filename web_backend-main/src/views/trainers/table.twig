@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% block title %}Тренеры{% endblock %}
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      {% if trainers is not empty %}
+        {% for key in trainers|first|keys %}
+          <th {% if key == "trainer_id" %}style="text-align: right;"{% endif %}>
+            {{ columnsMap[key] ?? key|capitalize }}
+          </th>
+        {% endfor %}
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for trainer in trainers %}
+      <tr>
+        {% for key, value in trainer %}
+          <td {% if key == "trainer_id" %}style="text-align: right;"{% endif %}>{{ value }}</td>
+        {% endfor %}
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="100%">Нет данных</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

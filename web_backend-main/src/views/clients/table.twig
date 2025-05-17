@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% block title %}Клиенты{% endblock %}
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      {% if clients is not empty %}
+        {% for key in clients|first|keys %}
+          <th {% if key == "client_id" %}style="text-align: right;"{% endif %}>
+            {{ columnsMap[key] ?? key|capitalize }}
+          </th>
+        {% endfor %}
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for client in clients %}
+      <tr>
+        {% for key, value in client %}
+          <td {% if key == "client_id" %}style="text-align: right;"{% endif %}>{{ value }}</td>
+        {% endfor %}
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="100%">Нет данных</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

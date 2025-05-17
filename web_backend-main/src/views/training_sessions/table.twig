@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% block title %}Тренировки{% endblock %}
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      {% if trainingSessions is not empty %}
+        {% for key in trainingSessions|first|keys %}
+          <th {% if key in ["training_session_id", "training_session_duration"] %}style="text-align: right;"{% endif %}> 
+            {{ columnsMap[key] ?? key|capitalize }}
+          </th>
+        {% endfor %}
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for trainingSession in trainingSessions %}
+      <tr>
+        {% for key, value in trainingSession %}
+          <td {% if key in ["training_session_id", "training_session_duration"] %}style="text-align: right;"{% endif %}>{{ value }}</td>
+        {% endfor %}
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="100%">Нет данных</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
