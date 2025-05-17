@@ -1,2 +1,3 @@
 # first_course
-this is my first course for git and git_hub
+this is course for web_dev that's incloud   
+PHP - JS - CSS - HTML 
