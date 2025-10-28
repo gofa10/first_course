@@ -1,5 +1,5 @@
 {
-    "name": "sergey/web_backend",
+    "name": "yousefesam/web_backend",
     "autoload": {
         "psr-4": {
             "App\\": "src/"
